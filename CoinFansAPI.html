@@ -591,6 +591,44 @@ kbd {
 }</code></pre></div></li>
 </ul>
 
+<h2 id="toc_10">注册</h2>
+
+<ul>
+<li>/user/register</li>
+<li>POST</li>
+<li><p>parameters:</p>
+
+<div><pre><code class="language-none">1. username - 手机号
+2. password - 密码（md5加密后）
+3. nickname - 昵称
+4. invite - 邀请码</code></pre></div></li>
+<li><p>例如：<a href="http://140.143.250.209/index.php/user/register">http://140.143.250.209/index.php/user/register</a></p></li>
+<li><p>Response:</p>
+
+<div><pre><code class="language-none">{
+    &quot;code&quot;:1,
+    &quot;data&quot;:true
+}   </code></pre></div></li>
+</ul>
+
+<h2 id="toc_11">修改昵称</h2>
+
+<ul>
+<li>/user/update</li>
+<li>POST</li>
+<li><p>parameters:</p>
+
+<div><pre><code class="language-none">1. nickname - 昵称
+2. token - 登录用户的token凭证</code></pre></div></li>
+<li><p>例如：<a href="http://140.143.250.209/index.php/user/update">http://140.143.250.209/index.php/user/update</a></p></li>
+<li><p>Response:</p>
+
+<div><pre><code class="language-none">{
+    &quot;code&quot;:1,
+    &quot;data&quot;:true
+}</code></pre></div></li>
+</ul>
+
 
 
 
