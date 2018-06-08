@@ -1,0 +1,65 @@
+html,body{width:100%;height:100%;margin: 0;}
+#Main{position:absolute;left:0;right:0;top:0;bottom:10px;}
+#Main,.touch_scroll{-webkit-overflow-scrolling: touch;}
+#info{
+    display:none;
+    padding:10px;
+}
+#content img{width:100%;}
+#title{
+font-size:24px;
+}
+#subheading{
+    color: #bbb;
+    fong-size:12px;
+}
+#iconImg{
+    width:50px;
+    height:50px;
+}
+#loadingImg{
+    position: absolute;
+    left:50%;
+    margin-left:25px;
+    animation: spin 1500ms infinite linear;
+    -webkit-animation:  spin 1500ms infinite linear;
+    -moz-animation: spin 1500ms infinite linear;
+    -o-animation: spin 1500ms infinite linear;
+    width:50px;
+    height:50px;
+}
+@keyframes spin {
+    0%   { transform: rotate(0deg);width: 72px; height: 72px;margin-left:-36px;margin-top:-36px; }
+    50%   { transform: rotate(180deg);width: 54px; height: 54px;margin-left:-27px;margin-top:-27px; }
+    100% { transform: rotate(360deg);width: 72px; height: 72px;margin-left:-36px;margin-top:-36px; }
+}
+@-webkit-keyframes spin /* Safari 和 Chrome */
+{
+    0%   { transform: rotate(0deg);width: 72px; height: 72px;margin-left:-36px;margin-top:-36px; }
+    50%   { transform: rotate(180deg);width: 54px; height: 54px;margin-left:-27px;margin-top:-27px; }
+    100% { transform: rotate(360deg);width: 72px; height: 72px;margin-left:-36px;margin-top:-36px; }
+}
+@-moz-keyframes spin {
+    0%   { transform: rotate(0deg);width: 72px; height: 72px;margin-left:-36px;margin-top:-36px; }
+    50%   { transform: rotate(180deg);width: 54px; height: 54px;margin-left:-27px;margin-top:-27px; }
+    100% { transform: rotate(360deg);width: 72px; height: 72px;margin-left:-36px;margin-top:-36px; }
+}
+@-o-keyframes spin {
+    0%   { transform: rotate(0deg);width: 72px; height: 72px;margin-left:-36px;margin-top:-36px; }
+    50%   { transform: rotate(180deg);width: 54px; height: 54px;margin-left:-27px;margin-top:-27px; }
+    100% { transform: rotate(360deg);width: 72px; height: 72px;margin-left:-36px;margin-top:-36px; }
+}
+#content img{max-width:100%;}
+#bottomInfo{
+    font-size: 12px;
+    color: rgb(136, 136, 136);
+    margin-bottom: 30px;
+}
+#bottomInfo div{
+    margin-bottom:10px;
+}
+#loading{
+    text-align: center;
+    margin-top: 30%;
+    display: none;
+}
