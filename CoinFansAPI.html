@@ -510,7 +510,7 @@ kbd {
 
 <div><pre><code class="language-none">1. token - 登录用户的token凭证
 2. state - 状态 (只设置成1)</code></pre></div></li>
-<li><p>例如：<a href="http://140.143.250.209/candy/get-count?token=397cd6d4ceca0bcbed9a822b07c0a8ad&amp;state=1">http://140.143.250.209/candy/get-count?token=397cd6d4ceca0bcbed9a822b07c0a8ad&amp;state=1</a></p></li>
+<li><p>例如：<a href="http://140.143.250.209/candy/get-count?token=789395e5c750101b772ee886dcf45c09&amp;state=1">http://140.143.250.209/candy/get-count?token=789395e5c750101b772ee886dcf45c09&amp;state=1</a></p></li>
 <li><p>Response:</p>
 
 <div><pre><code class="language-none">{
@@ -538,7 +538,7 @@ kbd {
 <div><pre><code class="language-none">1. token - 登录用户的token凭证
 2. state - 状态 (只设置成1)
 3. candy_name_id - 糖果id</code></pre></div></li>
-<li><p>例如：<a href="http://140.143.250.209/index.php/candy/pickup?token=397cd6d4ceca0bcbed9a822b07c0a8ad&amp;state=1&amp;candy_name_id=2">http://140.143.250.209/index.php/candy/pickup?token=397cd6d4ceca0bcbed9a822b07c0a8ad&amp;state=1&amp;candy<em>name</em>id=2</a></p></li>
+<li><p>例如：<a href="http://140.143.250.209/index.php/candy/pickup?token=789395e5c750101b772ee886dcf45c09&amp;state=1&amp;candy_name_id=2">http://140.143.250.209/index.php/candy/pickup?token=789395e5c750101b772ee886dcf45c09&amp;state=1&amp;candy<em>name</em>id=2</a></p></li>
 <li><p>Response:</p>
 
 <div><pre><code class="language-none">{
@@ -555,7 +555,7 @@ kbd {
 <li><p>parameters:</p>
 
 <div><pre><code class="language-none">1. token - 登录用户的token凭证</code></pre></div></li>
-<li><p>例如：<a href="http://140.143.250.209/index.php/candy/pickup?token=397cd6d4ceca0bcbed9a822b07c0a8ad">http://140.143.250.209/index.php/candy/pickup?token=397cd6d4ceca0bcbed9a822b07c0a8ad</a></p></li>
+<li><p>例如：<a href="http://140.143.250.209/index.php/candy/pickup?token=789395e5c750101b772ee886dcf45c09">http://140.143.250.209/index.php/candy/pickup?token=789395e5c750101b772ee886dcf45c09</a></p></li>
 <li><p>Response:</p>
 
 <div><pre><code class="language-none">{
@@ -609,7 +609,27 @@ kbd {
 }   </code></pre></div></li>
 </ul>
 
-<h2 id="toc_11">修改昵称</h2>
+<h2 id="toc_11">登录</h2>
+
+<ul>
+<li>/user/login</li>
+<li>POST</li>
+<li><p>parameters:</p>
+
+<div><pre><code class="language-none">1. username - 手机号
+2. password - 密码（md5加密后）</code></pre></div></li>
+<li><p>例如：<a href="http://140.143.250.209/index.php/user/login?username=15001391906&amp;password=96e79218965eb72c92a549dd5a330112">http://140.143.250.209/index.php/user/login?username=15001391906&amp;password=96e79218965eb72c92a549dd5a330112</a></p></li>
+<li><p>Response:</p>
+
+<div><pre><code class="language-none">{
+    &quot;code&quot;:1,
+    &quot;data&quot;:{
+        &quot;token&quot;:&quot;812fe2ad75274e572d9d7482d01f944a&quot;
+    }
+}</code></pre></div></li>
+</ul>
+
+<h2 id="toc_12">修改昵称</h2>
 
 <ul>
 <li>/user/update</li>
@@ -624,6 +644,67 @@ kbd {
 <div><pre><code class="language-none">{
     &quot;code&quot;:1,
     &quot;data&quot;:true
+}</code></pre></div></li>
+</ul>
+
+<h2 id="toc_13">添加提币地址</h2>
+
+<ul>
+<li>/wallet/add</li>
+<li>POST</li>
+<li><p>parameters:</p>
+
+<div><pre><code class="language-none">1. address - 地址
+2. memo - 备注号
+3. comment - 备注
+4. token - 登录用户的token凭证</code></pre></div></li>
+<li><p>Response:</p>
+
+<div><pre><code class="language-none">{
+    &quot;code&quot;:1,
+    &quot;data&quot;:true
+}</code></pre></div></li>
+</ul>
+
+<h2 id="toc_14">提币地址列表</h2>
+
+<ul>
+<li>/wallet/list</li>
+<li>GET</li>
+<li><p>parameters:</p>
+
+<div><pre><code class="language-none">1. token - 登录用户的token凭证</code></pre></div></li>
+<li><p>例如：<a href="http://140.143.250.209/index.php/wallet/list?token=789395e5c750101b772ee886dcf45c09">http://140.143.250.209/index.php/wallet/list?token=789395e5c750101b772ee886dcf45c09</a></p></li>
+<li><p>Response:</p>
+
+<div><pre><code class="language-none">{
+    &quot;code&quot;:1,
+    &quot;data&quot;:[
+        {
+            &quot;id&quot;:&quot;2000001&quot;, // 用户id
+            &quot;nickname&quot;: &quot;老王&quot;, // 用户昵称
+            &quot;strength&quot;:&quot;58&quot;, // 算力
+            &quot;num&quot;:{   // 获取的币数量 暂时不用
+                &quot;candy_name_id&quot;:&quot;3.23037&quot;
+            }
+        },
+        {
+            &quot;id&quot;:&quot;2000002&quot;,
+            &quot;nickname&quot;: &quot;老王&quot;,
+            &quot;strength&quot;:&quot;50&quot;,
+            &quot;num&quot;:{
+                &quot;candy_name_id&quot;:&quot;0.25316&quot;
+            }
+        },
+        {
+            &quot;id&quot;:&quot;2000003&quot;,
+            &quot;nickname&quot;: &quot;老王&quot;,
+            &quot;strength&quot;:&quot;50&quot;,
+            &quot;num&quot;:{
+                &quot;candy_name_id&quot;:&quot;0.25316&quot;
+            }
+        }
+    ]
 }</code></pre></div></li>
 </ul>
 
