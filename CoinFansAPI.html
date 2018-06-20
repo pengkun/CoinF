@@ -647,7 +647,25 @@ kbd {
 }</code></pre></div></li>
 </ul>
 
-<h2 id="toc_13">添加提币地址</h2>
+<h2 id="toc_13">修改密码</h2>
+
+<ul>
+<li>/user/update</li>
+<li>POST</li>
+<li><p>parameters:</p>
+
+<div><pre><code class="language-none">1. password - 新密码
+2. token - 登录用户的token凭证</code></pre></div></li>
+<li><p>例如：<a href="http://140.143.250.209/index.php/user/update">http://140.143.250.209/index.php/user/update</a></p></li>
+<li><p>Response:</p>
+
+<div><pre><code class="language-none">{
+    &quot;code&quot;:1,
+    &quot;data&quot;:true
+}</code></pre></div></li>
+</ul>
+
+<h2 id="toc_14">添加提币地址</h2>
 
 <ul>
 <li>/wallet/add</li>
@@ -666,7 +684,7 @@ kbd {
 }</code></pre></div></li>
 </ul>
 
-<h2 id="toc_14">提币地址列表</h2>
+<h2 id="toc_15">提币地址列表</h2>
 
 <ul>
 <li>/wallet/list</li>
@@ -691,6 +709,44 @@ kbd {
             &quot;comment&quot;:null
         }
     ]
+}</code></pre></div></li>
+</ul>
+
+<h2 id="toc_16">提币</h2>
+
+<ul>
+<li>/record/add</li>
+<li>POST</li>
+<li><p>parameters:</p>
+
+<div><pre><code class="language-none">1. token - 登录用户的token凭证
+2. address - 地址
+3. num  - 数量
+4. candy_name_id - 币id</code></pre></div></li>
+<li><p>Response:</p>
+
+<div><pre><code class="language-none">{
+    &quot;code&quot;:1,
+    &quot;data&quot;:&quot;&quot;,
+    &quot;message&quot;:&quot;余额不足&quot;
+}</code></pre></div></li>
+</ul>
+
+<h2 id="toc_17">意见反馈</h2>
+
+<ul>
+<li>/opinion/add</li>
+<li>POST</li>
+<li><p>parameters:</p>
+
+<div><pre><code class="language-none">1. content - 反馈内容
+2. token - 登录用户的token凭证</code></pre></div></li>
+<li><p>例如：<a href="http://140.143.250.209/index.php/opinion/add">http://140.143.250.209/index.php/opinion/add</a></p></li>
+<li><p>Response:</p>
+
+<div><pre><code class="language-none">{
+    &quot;code&quot;:1,
+    &quot;data&quot;:true
 }</code></pre></div></li>
 </ul>
 
