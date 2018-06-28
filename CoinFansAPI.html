@@ -555,7 +555,7 @@ kbd {
 <li><p>parameters:</p>
 
 <div><pre><code class="language-none">1. token - 登录用户的token凭证</code></pre></div></li>
-<li><p>例如：<a href="http://140.143.250.209/index.php/candy/pickup?token=789395e5c750101b772ee886dcf45c09">http://140.143.250.209/index.php/candy/pickup?token=789395e5c750101b772ee886dcf45c09</a></p></li>
+<li><p>例如：<a href="http://140.143.250.209/index.php/candy/rank">http://140.143.250.209/index.php/candy/rank</a></p></li>
 <li><p>Response:</p>
 
 <div><pre><code class="language-none">{
@@ -589,7 +589,35 @@ kbd {
 }</code></pre></div></li>
 </ul>
 
-<h2 id="toc_10">注册</h2>
+<h2 id="toc_10">糖果资产</h2>
+
+<ul>
+<li>/candy/my-candy</li>
+<li>GET</li>
+<li><p>parameters:</p>
+
+<div><pre><code class="language-none">1. token - 登录用户的token凭证
+2. state - 2</code></pre></div></li>
+<li><p>例如：<a href="http://140.143.250.209/index.php/candy/my-candy?token=789395e5c750101b772ee886dcf45c08&amp;state=2">http://140.143.250.209/index.php/candy/my-candy?token=789395e5c750101b772ee886dcf45c08&amp;state=2</a></p></li>
+<li><p>Response:</p>
+
+<div><pre><code class="language-none">{
+    &quot;code&quot;:1,
+    &quot;data&quot;:{
+        &quot;list&quot;:[
+            {
+                &quot;candy_name_id&quot;:&quot;2&quot;, // 糖果id
+                &quot;sum&quot;:&quot;0.29367&quot;, // 糖果数量
+                &quot;candy_name&quot;:&quot;bitcore&quot;, // 糖果名字
+                &quot;img&quot;:&quot;https://coin-1255865046.cos.ap-beijing.myqcloud.com/candy/bitcore.png&quot; // 糖果icon
+                &quot;price&quot;: 24.43 // 折合人民币
+            }
+         ]
+    }
+}</code></pre></div></li>
+</ul>
+
+<h2 id="toc_11">注册</h2>
 
 <ul>
 <li>/user/register</li>
@@ -609,7 +637,7 @@ kbd {
 }   </code></pre></div></li>
 </ul>
 
-<h2 id="toc_11">登录</h2>
+<h2 id="toc_12">登录</h2>
 
 <ul>
 <li>/user/login</li>
@@ -625,11 +653,14 @@ kbd {
     &quot;code&quot;:1,
     &quot;data&quot;:{
         &quot;token&quot;:&quot;812fe2ad75274e572d9d7482d01f944a&quot;
+        &quot;nickname&quot;:&quot;1&quot;, // 昵称
+        &quot;strength&quot;:&quot;1&quot;, // 算力
+        &quot;invite&quot;:&quot;1JKJ5&quot;, // 邀请码
     }
 }</code></pre></div></li>
 </ul>
 
-<h2 id="toc_12">修改昵称</h2>
+<h2 id="toc_13">修改昵称</h2>
 
 <ul>
 <li>/user/update</li>
@@ -647,7 +678,7 @@ kbd {
 }</code></pre></div></li>
 </ul>
 
-<h2 id="toc_13">修改密码</h2>
+<h2 id="toc_14">修改密码</h2>
 
 <ul>
 <li>/user/update</li>
@@ -665,7 +696,7 @@ kbd {
 }</code></pre></div></li>
 </ul>
 
-<h2 id="toc_14">添加提币地址</h2>
+<h2 id="toc_15">添加提币地址</h2>
 
 <ul>
 <li>/wallet/add</li>
@@ -684,7 +715,7 @@ kbd {
 }</code></pre></div></li>
 </ul>
 
-<h2 id="toc_15">提币地址列表</h2>
+<h2 id="toc_16">提币地址列表</h2>
 
 <ul>
 <li>/wallet/list</li>
@@ -714,7 +745,7 @@ kbd {
 }</code></pre></div></li>
 </ul>
 
-<h2 id="toc_16">提币</h2>
+<h2 id="toc_17">提币</h2>
 
 <ul>
 <li>/record/add</li>
@@ -734,7 +765,7 @@ kbd {
 }</code></pre></div></li>
 </ul>
 
-<h2 id="toc_17">意见反馈</h2>
+<h2 id="toc_18">意见反馈</h2>
 
 <ul>
 <li>/opinion/add</li>
