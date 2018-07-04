@@ -13,7 +13,7 @@ $.ajax({
             var nowDate = new Date();
             var createTime = new Date(res.data.create_time.replace(/-/g,'/'));
             var createMonth = createTime.getMonth()+1
-            $("#creatTime").append(createTime.getFullYear()+"-"+createMonth+"-"+createTime.getDate());
+            //$("#creatTime").append(createTime.getFullYear()+"-"+createMonth+"-"+createTime.getDate());
             //$("#creatTime").append(nowDate.getDate());
             var mistiming = nowDate.getTime()-createTime.getTime()
             if(mistiming<=60000){//如果时间差不足1分钟的话，显示刚刚
@@ -42,11 +42,15 @@ $.ajax({
         }
         $("#content").append(res.data.contents);
         $("#title").append(res.data.title);
-        if(res.data.author!=""){
-            $("#author").append("<span>作者：</span>"+res.data.author);
-        }
+        
         if(res.data.source!=""){
             $("#source").append("<span>文章来源于：</span>"+res.data.source);
+            $("#sourceTitle").append(res.data.source);
+        }else{
+        	if(res.data.author!=""){
+                $("#author").append("<span>作者：</span>"+res.data.author);
+                $("#sourceTitle").append(res.data.author);
+            }
         }
     },
     error:function(XMLHttpRequest){
