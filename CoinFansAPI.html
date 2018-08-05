@@ -468,37 +468,14 @@ kbd {
 }</code></pre></div></li>
 </ul>
 
-<h2 id="toc_6">资讯详情</h2>
+<h2 id="toc_6">资讯详情 <color=red></h2>
 
 <ul>
-<li>/news/get</li>
-<li>GET</li>
+<li>web页</li>
 <li><p>parameters:</p>
 
 <div><pre><code class="language-none">1. id - 新闻id</code></pre></div></li>
-<li><p>例如：<a href="http://140.143.250.209/news/get?id=8">http://140.143.250.209/news/get?id=8</a></p></li>
-<li><p>Response:</p>
-
-<div><pre><code class="language-none">{
-    &quot;code&quot;:1,
-    &quot;data&quot;:{
-        {
-             &quot;id&quot;: &quot;2&quot;, // 资讯id
-             &quot;title&quot;: &quot;标题&quot;, // 标题
-             &quot;type&quot;: &quot;1&quot;,   // 类型
-             &quot;contents&quot;: &quot;&quot;, // 详情
-             &quot;coin_id&quot;: null,
-             &quot;create_time&quot;: &quot;2018-05-10 23:52:07&quot;,
-             &quot;update_time&quot;: &quot;2018-05-10 23:52:10&quot;,
-             &quot;img&quot;: null, // 图片
-             &quot;source&quot;: null,
-             &quot;date&quot;: null,
-             &quot;status&quot;: &quot;1&quot;,
-             &quot;author&quot;: null, // 来源
-             &quot;link_url&quot;: null // 链接
-        }
-    }
-}</code></pre></div></li>
+<li><p>例如：<a href="http://140.143.250.209:8080/web/default.html?id=8">http://140.143.250.209:8080/web/default.html?id=8</a></p></li>
 </ul>
 
 <h2 id="toc_7">获取糖果数量</h2>
@@ -518,6 +495,7 @@ kbd {
     &quot;data&quot;:{
         &quot;list&quot;:[
             {
+                    &quot;id&quot;:&quot;2387&quot;, // 用于收取糖果的id
                 &quot;candy_name_id&quot;:&quot;2&quot;, // 糖果id
                 &quot;sum&quot;:&quot;0.29367&quot;, // 糖果数量
                 &quot;candy_name&quot;:&quot;bitcore&quot;, // 糖果名字
@@ -531,7 +509,7 @@ kbd {
 <h2 id="toc_8">获取糖果</h2>
 
 <ul>
-<li>/candy/pickup</li>
+<li>/candy/pickup-one</li>
 <li>GET</li>
 <li><p>parameters:</p>
 
@@ -597,7 +575,7 @@ kbd {
 <li><p>parameters:</p>
 
 <div><pre><code class="language-none">1. token - 登录用户的token凭证
-2. state - 2</code></pre></div></li>
+2. status - 2</code></pre></div></li>
 <li><p>例如：<a href="http://140.143.250.209/index.php/candy/my-candy?token=789395e5c750101b772ee886dcf45c08&amp;state=2">http://140.143.250.209/index.php/candy/my-candy?token=789395e5c750101b772ee886dcf45c08&amp;state=2</a></p></li>
 <li><p>Response:</p>
 
